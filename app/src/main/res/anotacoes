@@ -1,0 +1,14 @@
+Os activitys ficam dentro da primeira pasta em java
+para criar um novo botão direito em cima da pasta, new e Java Class, ou em Activity
+
+Dentro de res tem os arquivos estaticos, onde ira conter as views
+styles etc.
+Para criar uma nova pasta de view e preciso em cima da pasta clicar com o botão direito,
+ir em new , depois Android Resouce Directory em type escolher layout
+Para criar arquivo de layout ir em new de novo e em Layout Resource File
+
+Os componentes de uma view vem em um grupo de componetes , como padrão o LinearLayout, onde cada item e organizado na vertical
+Para mudar clique com o botão direito em cima dele, e Convert View
+
+--Criando icone personalizado
+Clique com botao direito em res/drawable , new , img asset
