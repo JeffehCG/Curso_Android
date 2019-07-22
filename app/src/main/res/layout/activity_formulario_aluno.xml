@@ -2,6 +2,7 @@
 
 <!--Adicionando barra de rolagem na tela formulario - ela só pode ter um elemento filho, ou seja, seu filhe deve ter varios outros dentro-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -18,8 +19,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Nome"
-            android:inputType="textCapSentences" />
+            android:hint="@string/nome"
+            android:inputType="textCapSentences"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
         <!--id - identificação do componente
             wrap_content - pega o espaço nescessario
             hint - placeholder
@@ -30,40 +33,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Telefone"
-            android:inputType="phone" />
+            android:hint="@string/telefone"
+            android:inputType="phone"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
 
         <EditText
             android:id="@+id/activity_formulario_aluno_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="E-mail"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
 
         <EditText
             android:id="@+id/activity_formulario_aluno_cpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="CPF"
-            android:inputType="number" />
+            android:hint="@string/cpf"
+            android:inputType="number"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
 
         <EditText
             android:id="@+id/activity_formulario_aluno_RG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="RG"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/rg"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
 
         <EditText
             android:id="@+id/activity_formulario_CEP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="CEP"
-            android:inputType="number" />
+            android:hint="@string/cep"
+            android:inputType="number"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
 
         <!--Botão-->
         <!--<Button-->

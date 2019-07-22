@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/activity_lista_alunos_menu_remover"
-        android:title="Remover" />
+        android:title="@string/remover" />
     <item
         android:id="@+id/activity_lista_alunos_menu_cancelar"
-        android:title="Cancelar" />
+        android:title="@string/cancelar" />
 </menu>

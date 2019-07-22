@@ -49,10 +49,10 @@ public class Aluno implements Serializable {
         return email;
     }
 
-    //Retornando apenas o nome em string
+    //Retornando apenas o nome e telefone em string para lista
     @Override
     public String toString() {
-        return nome;
+        return nome + " - " + telefone;
     }
 
     public void setId(int id) {
