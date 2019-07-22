@@ -1,47 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--Adicionando barra de rolagem na tela formulario - ela só pode ter um elemento filho, ou seja, seu filhe deve ter varios outros dentro-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <!--match_parent - pega o espeço do componete pai
-        oriatation - orientação do componete-->
-    
-    <!--Inputs do formulario-->
-    <EditText
-        android:id="@+id/activity_formulario_aluno_nome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:inputType="textCapSentences"
-        android:hint="Nome"/>
-    <!--id - identificação do componente
-        wrap_content - pega o espaço nescessario
-        hint - placeholder
-        inputType - Tipo do input (email, telefone etc..)-->
+    android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/activity_formulario_aluno_telefone"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:inputType="phone"
-        android:hint="Telefone"/>
+        android:orientation="vertical">
+        <!--match_parent - pega o espeço do componete pai
+            oriatation - orientação do componete-->
 
-    <EditText
-        android:id="@+id/activity_formulario_aluno_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:inputType="textEmailAddress"
-        android:hint="E-mail"/>
-    
-    <!--Botão-->
-    <Button
-        android:id="@+id/activity_formulario_aluno_botao_salvar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Salvar"/>
-    <!--text - label do botão-->
+        <!--Inputs do formulario-->
+        <EditText
+            android:id="@+id/activity_formulario_aluno_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Nome"
+            android:inputType="textCapSentences" />
+        <!--id - identificação do componente
+            wrap_content - pega o espaço nescessario
+            hint - placeholder
+            inputType - Tipo do input (email, telefone etc..)-->
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/activity_formulario_aluno_telefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Telefone"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/activity_formulario_aluno_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/activity_formulario_aluno_cpf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="CPF"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/activity_formulario_aluno_RG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="RG"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/activity_formulario_CEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="CEP"
+            android:inputType="number" />
+
+        <!--Botão-->
+        <!--<Button-->
+            <!--android:id="@+id/activity_formulario_aluno_botao_salvar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="8dp"-->
+            <!--android:text="Salvar" />-->
+        <!--text - label do botão-->
+
+    </LinearLayout>
+</ScrollView>
