@@ -1,5 +1,6 @@
 package com.example.agenda.DAO;
 
+//Classe não mais usada, era usada antes da implementação do Room (Banco de dados) para mantes os dados pelomenos em memoria
 import com.example.agenda.model.Aluno;
 
 import java.util.ArrayList;

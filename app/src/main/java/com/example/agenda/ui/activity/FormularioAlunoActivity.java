@@ -8,9 +8,12 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import com.example.agenda.DAO.AlunoDAO;
 import com.example.agenda.R;
+import com.example.agenda.database.AgendaDatabase;
+import com.example.agenda.database.dao.RoomAlunoDao;
 import com.example.agenda.model.Aluno;
 
 import static com.example.agenda.ui.activity.ConstantesAcitivities.CHAVE_ALUNO;
@@ -20,16 +23,21 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     public static final String TITULO_APPBAR_ADICIONA = "Novo Aluno"; //constante, não muda
     public static final String TITULO_APPBAR_ALTERA = "Edita Aluno"; //constante, não muda
     private EditText campoNome;
+    //private EditText campoSobrenome;
     private EditText campoTelefone;
     private EditText campoEmail;
     //DAO - data acess object (interface para salvar os dados do aluno)
-    private final AlunoDAO dao = new AlunoDAO();
+    private RoomAlunoDao dao;
     private Aluno aluno; //Instancia da classe Aluno
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_aluno);
+
+        //Instanciando o DataBase para manipular os dados do mesmo
+        AgendaDatabase dadabase = AgendaDatabase.getInstance(this);
+        dao = dadabase.getRoomAlunoDao(); //Pegando dao relacionado ao database
 
         //Pegando a referencia dos inputs da view, para poder pegar os valores
         InicializarCampos();
@@ -82,6 +90,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
 
     private void preencheCampos() {
         campoNome.setText(aluno.getNome());
+        //campoSobrenome.setText(aluno.getSobrenome());
         campoTelefone.setText(aluno.getTelefone());
         campoEmail.setText(aluno.getEmail());
     }
@@ -102,6 +111,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         //ctrl + alt + f refatora uma variavel do active para um atributo
         //Pegando referencia para os inputs(É preciso colocar final por causa da classa anonima
         campoNome = findViewById(R.id.activity_formulario_aluno_nome);
+        //campoSobrenome = findViewById(R.id.activity_formulario_aluno_sobrenome);
         campoTelefone = findViewById(R.id.activity_formulario_aluno_telefone);
         campoEmail = findViewById(R.id.activity_formulario_aluno_email);
     }
@@ -110,11 +120,13 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     private void preencheAluno() {
         //Pegando os valores do campo quando clicar
         String nome = campoNome.getText().toString();
+        //String sobrenome = campoSobrenome.getText().toString();
         String telefone = campoTelefone.getText().toString();
         String email = campoEmail.getText().toString();
 
         //setando os valores a instancia aluno
         aluno.setNome(nome);
+        //aluno.setSobrenome(sobrenome);
         aluno.setTelefone(telefone);
         aluno.setEmail(email);
     }

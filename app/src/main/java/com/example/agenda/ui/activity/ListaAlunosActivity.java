@@ -34,7 +34,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
     public static final String TITULO_APPBAR = "Lista de Alunos";
 
     //Classe que contem metodos(comportamentos) usados nessa activity
-    private final ListaAlunosViewComportamentos listaAlunosViewComportamentos = new ListaAlunosViewComportamentos(this);
+    private ListaAlunosViewComportamentos listaAlunosViewComportamentos;
 
     //Adicionando novos comportamentos a activity (O android é baseado em um ciclo de vida, onde os componentes são criados e destuidos)
     @Override
@@ -43,6 +43,9 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
         //Colocando o titulo
         setTitle(TITULO_APPBAR); //ctrl + alt + c, convertendo em uma constante
+
+        //Instanciando classe
+        listaAlunosViewComportamentos = new ListaAlunosViewComportamentos(this);
 
         //Trabalhando com a view - layouts (Arquivos staticos) -- Exibindo na tela
         setContentView(R.layout.activity_lista_alunos); //R representa a pasta res, assim você pode chamar qualquer arquivo statico de la

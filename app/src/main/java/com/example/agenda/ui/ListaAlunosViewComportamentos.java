@@ -7,23 +7,28 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
+import androidx.room.Room;
 
 import com.example.agenda.DAO.AlunoDAO;
+import com.example.agenda.database.AgendaDatabase;
+import com.example.agenda.database.dao.RoomAlunoDao;
 import com.example.agenda.model.Aluno;
 import com.example.agenda.ui.adapter.ListaAlunosAdapter;
 
 //Classe usada para delegar algumas funções da activity, para não deixar a mesma muito carregado de funções
 public class ListaAlunosViewComportamentos {
 
-    //Instancia de DAO - onde é guardado a lista de alunos
-    private final AlunoDAO dao;
+    //Instancia de DAO - onde é guardado a lista de alunos no DB
+    private final RoomAlunoDao dao;
     private final ListaAlunosAdapter adapter; //Instanciando adpter - que ira adaptar os dados do aluno a lista
     private final Context context;
 
     public ListaAlunosViewComportamentos(Context context) {
         this.context = context;
         adapter = new ListaAlunosAdapter(this.context);
-        dao = new AlunoDAO();
+        //Criando uma instancia do database
+        dao = AgendaDatabase.getInstance(context)
+                .getRoomAlunoDao();
     }
 
     public void confirmacaoRemocao(@NonNull final MenuItem item) {
